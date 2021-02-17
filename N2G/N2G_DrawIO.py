@@ -346,7 +346,7 @@ class drawio_diagram:
         if not self._node_exists(target, **target_node_dict):
             self.add_node(id=target, **target_node_dict)
         # create edge id
-        edge_tup = tuple(sorted([label, source, target, src_label, trgt_label]))
+        edge_tup = tuple([label, source, target, src_label, trgt_label])
         edge_id = hashlib.md5(",".join(edge_tup).encode()).hexdigest()
         if self._link_exists(edge_id, edge_tup):
             return
